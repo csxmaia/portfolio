@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+html {
+    min-height: 100%;
+    background-color: #F2F2F2;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    /*border: 1px solid black;*/
+    width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 38% 62%;
+    grid-template-rows: repeat(2, minmax(50px, auto));
+    /*grid-template-rows: repeat(2, 1fr);*/
+    row-gap: 32px;
+    column-gap: 24px;
+}
+
+
+.pessoal {
+    grid-column: span 2;
+    grid-row: span 4;
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 4px 0 rgba( 200, 200, 200, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, auto));
+}
+
+.pessoal .foto {
+    padding-right: 16px;
+}
+
+.pessoal .foto > img {
+    width: 250px;
+    border-radius: 12px;
+}
+
+.pessoal .info {
+    padding-left: 4px;
+}
+
+.pessoal .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 70px auto;
+}
+
+.pessoal .info .nome h4 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.pessoal .info .nome p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4F4F4F;
+    margin-bottom: 4px;
+}
+
+.pessoal .info .contato p {
+    font-family: monospace;
+    margin-bottom: 16px;
+    text-align: end;
+}
+
+.pessoal .info .apresentacao {
+    grid-column: span 2;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.box {
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.box h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #4F4F4F;
+    margin: 0;
+    font-size: 22px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.experiencias .card .item .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.escolaridade .card .item .info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, auto));
+    grid-template-rows: repeat(2, auto);
+    row-gap: 12px;
+}
+
+.card {
+    display: grid;
+    gap: 12px;
+}
+
+
+.card .item {
+    display: grid;
+    grid-template-columns: 58px auto;
+    grid-template-rows: repeat(2, 25px);
+}
+
+.card .item img {
+    width: 50px;
+}
+
+.card .item .info .location > p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.card .item .info .year > p{
+    font-size: 13px;
+    font-weight: 500;
+    color: #828282
+}
+
+.card .item .info .description {
+    grid-row: 2;
+    grid-column: span 2;
+}
+
+.card .item .info .description > p {
+    font-size: 14px;
+}
+
+
+.tecnologias .items img {
+    width: 40px;
+}
+
+.tecnologias .items {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px 1fr 40px 1fr;
+    grid-template-rows: repeat(5,1fr);
+    height: auto;
+    margin-top: 16px;
+    column-gap: 12px;
+    align-items: center;
+}
+
+.tecnologias .items .logo {
+    text-align: end;
+}
+
+
+.projetos .box .projeto-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 16px;
+    justify-items: center;
+}
+
+.projeto-box .item {
+    width: 200px;
+}
+
+.projeto-box img {
+    width: 100%;
+}
+
+.projeto-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 16px;
+    width: 80%;
+}
+
+.modal-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #4F4F4F;
+    margin: 0;
+    font-size: 22px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.projetos-modal > div {
+    margin-bottom: 100px;
+}
+
+.projetos-modal img {
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        width: auto;
+        grid-template-columns: minmax(10px, 100%);
+        grid-template-rows: auto;
+        row-gap: 16px
+    }
+
+    .pessoal {
+        width: auto;
+        margin: 0;
+        grid-template-columns: 0;
+        grid-column: unset;
+        grid-row: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pessoal .foto {
+        padding: 8px 0 16px 0;
+    }
+
+    .pessoal .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pessoal .info .nome {
+        align-self: center;
+    }
+
+    .pessoal .info .nome h4{
+        text-align: center;
+    }
+
+    .pessoal .info .nome p {
+        text-align: center;
+    }
+
+    .pessoal .info .contato {
+        align-self: center;
+    }
+
+    .left {
+        display: flex;
+    }
+
+    .escolaridade .card .item {
+        grid-template-rows: repeat(2, 50%);
+    }
+
+    .escolaridade .card .item .info {
+        grid-row: span 2;
+        row-gap: 0;
+        /*grid-template-rows: repeat(2, minmax(10px, 100%));*/
+    }
+
+    .right {
+        gap: 16px;
+    }
+
+    .tecnologias .items {
+        grid-template-columns: 40px 1fr 40px 1fr;
+    }
+
+    .projetos .box .projeto-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projetos .box .projeto-box .item {
+        width: 300px;
+        margin-bottom: 16px;
+    }
+
+    .modal {
+        padding-top: 50px;
+    }
+}
